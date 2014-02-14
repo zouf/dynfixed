@@ -17,11 +17,11 @@ pytest.o:	pytest.c
 	$(CC) $(PY_CFLAGS) -c $^ 
 
 clean:
-	rm -f *.a *.o *.exe *.so *.pyc
+	rm -f *.a *.o *.exe *.so *.pyc ../libdynfixed.so
 
 libdynfixed.so: dynfixed.o
 	g++ -fPIC $(LFLAGS) -o $@ $^
-	ln -s --force $@ ../
+	ln -s --force $(PWD)/$@ ../
 
 dynfixed.o: $(SOURCE)
 	$(CC) $(CFLAGS) -c  $^ -o $@ 

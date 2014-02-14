@@ -1,12 +1,11 @@
 
-SOURCE=dynfixed.c 
-CC=gcc#$(CS_BASE)/llvm-install/bin/clang
+CC=gcc
 CFLAGS=-Wall -g -O3   -I../src/
 
-all:  test.exe pytest.exe
+all: test.exe 
 
 test.exe: test.o	
-	$(CC) test.o -o $@ ../libdynfixed.a -lm
+	$(CC) test.o -o $@ -L.. -ldynfixed -lm
 
 test.o:	test.c
 	$(CC) -c $^ $(CFLAGS) -o $@
