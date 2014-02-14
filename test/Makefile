@@ -9,3 +9,7 @@ test.exe: test.o
 
 test.o:	test.c
 	$(CC) -c $^ $(CFLAGS) -o $@
+
+.PHONY : clean
+clean:
+	rm test.o test.exe

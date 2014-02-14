@@ -6,7 +6,7 @@ PY_CFLAGS=-I/usr/include/python2.7 -fno-strict-aliasing -DNDEBUG -g -fwrapv -O3 
 CFLAGS=$(PY_CFLAGS) -fPIC 
 
 PY_LFLAGS=-L/usr/lib/python2.7/config -lpthread -ldl -lutil -lm -lpython2.7 
-LFLAGS=-shared -Wl,-soname,libdynfixedpoint.so -lelf -lrt -lpthread -Wall -fPIC  $(PY_LFLAGS)
+LFLAGS=-shared -Wl,-soname,libdynfixed.so -lelf -lrt -lpthread -Wall -fPIC  $(PY_LFLAGS)
 
 all: libdynfixed.so pytest.exe
 
